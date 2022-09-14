@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Cap04T3P2N.Models.Alunos>
+
+@{
+    ViewBag.Title = "Listar";
+}
+
+<h2>Listagem de Alunos</h2>
+
+<p>
+    @Html.ActionLink("Inserir um Novo", "Inserir")
+</p>
+<table border="1" width="600">
+    <tr>
+        <th width="100">
+            @Html.DisplayNameFor(model => model.Cod)
+        </th>
+        <th width="200">
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th width="70">
+            @Html.DisplayNameFor(model => model.Idade)
+        </th>
+        <th width="230"></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cod)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Idade)
+        </td>
+        <td>
+            @Html.ActionLink("Alterar", "Alterar", new { id=item.Cod }) |
+            @Html.ActionLink("Detalhes", "Pesquisar", new { id=item.Cod }) |
+            @Html.ActionLink("Apagar", "Apagar", new { id=item.Cod })
+        </td>
+    </tr>
+}
+
+</table>
