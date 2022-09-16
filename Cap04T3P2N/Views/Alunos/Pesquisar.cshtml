@@ -1,0 +1,42 @@
+﻿@model Cap04T3P2N.Models.Alunos
+
+@{
+    ViewBag.Title = "Pesquisar";
+}
+
+<h2>Pesquisar</h2>
+
+<div>
+    <h4>Alunos</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Cod)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cod)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Idade)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Idade)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Alterar", "Alterar", new { id = Model.Cod }) |
+    @Html.ActionLink("Voltar ao Menu", "Index")
+</p>

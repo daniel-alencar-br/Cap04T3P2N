@@ -1,0 +1,50 @@
+﻿@model Cap04T3P2N.Models.Alunos
+
+@{
+    ViewBag.Title = "Apagar";
+}
+
+<h2>Apagar</h2>
+
+<h3>Tem certeza que deseja apagar mesmo?</h3>
+<div>
+    <h4>Alunos</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Cod)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cod)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Idade)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Idade)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        @Html.HiddenFor(model => model.Cod)
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Apagar" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
